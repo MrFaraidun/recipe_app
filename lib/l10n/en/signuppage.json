@@ -1,0 +1,13 @@
+{
+  "title": "Create Account",
+  "subtitle": "Sign up to continue",
+  "fullName": "Full Name",
+  "email": "Email Address",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "createAccount": "Create Account",
+  "terms": "By creating an account, you agree to our Terms of Service and Privacy Policy",
+  "haveAccount": "Already have an account? ",
+  "signIn": "Sign In"
+}
+

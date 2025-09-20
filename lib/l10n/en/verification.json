@@ -1,0 +1,8 @@
+{
+  "title": "Verify Email",
+  "enterCode": "Enter the 4-digit code sent to",
+  "expiresIn": "Code expires in {time}",
+  "verify": "Verify",
+  "resend": "Resend"
+}
+
