@@ -1,16 +1,36 @@
-# recipe_app
+# 🍳 Recipe App
 
-A new Flutter project.
+A modern Flutter recipe application with beautiful UI and comprehensive features.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- 🔐 **Authentication** - Login/Signup system
+- �� **Profile Management** - Edit profile, settings, privacy
+- ❤️ **Favorites** - Save and manage favorite recipes
+- 🍽️ **Recipe Management** - Create, edit, and browse recipes
+- 👥 **Social Features** - Follow users, comments, reviews
+- �� **Shopping List** - Create and manage shopping lists
+- �� **Cooking Mode** - Step-by-step cooking instructions
+- 📱 **Modern UI** - Clean, responsive design
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Getting Started
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repository
+2. Install Flutter dependencies: `flutter pub get`
+3. Run the app: `flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## �� Screenshots
+
+[Add screenshots here]
+
+## 🛠️ Tech Stack
+
+- Flutter
+- Dart
+- Custom Widgets
+- Named Routes
+- State Management
+
+## 📄 License
+
+This project is licensed under the MIT License.
