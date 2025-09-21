@@ -4,6 +4,7 @@ import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
 import '../models/recipe.dart';
 import '../widgets/recipe_card.dart';
+import 'following_followers_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -67,6 +68,12 @@ class _ProfilePageState extends State<ProfilePage>
         title: const Text('My Profile', style: AppTextStyles.h2),
         actions: [
           IconButton(
+            icon: const Icon(Icons.settings, color: AppColors.textPrimary),
+            onPressed: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.share, color: AppColors.textPrimary),
             onPressed: () {},
           ),
@@ -85,8 +92,21 @@ class _ProfilePageState extends State<ProfilePage>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _buildStat('32', 'Recipes'),
-                _buildStat('782', 'Following'),
-                _buildStat('1.287', 'Followers'),
+                GestureDetector(
+                  onTap: () =>
+                      Navigator.pushNamed(context, '/following-followers'),
+                  child: _buildStat('782', 'Following'),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const FollowingFollowersPage(isFollowingTab: false),
+                    ),
+                  ),
+                  child: _buildStat('1.287', 'Followers'),
+                ),
               ],
             ),
           ),

@@ -29,6 +29,12 @@ class _HomePageState extends State<HomePage> {
             child: _buildSearchBar(),
           ),
 
+          // Quick Access Buttons
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: _buildQuickAccessButtons(),
+          ),
+
           // 📌 Category title
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -182,6 +188,67 @@ class _HomePageState extends State<HomePage> {
           child: SizedBox(height: kBottomNavigationBarHeight + 20),
         ),
       ],
+    );
+  }
+
+  Widget _buildQuickAccessButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildQuickAccessButton(
+          icon: Icons.favorite,
+          label: 'Favorites',
+          onTap: () => Navigator.pushNamed(context, '/favorites'),
+        ),
+        _buildQuickAccessButton(
+          icon: Icons.shopping_cart,
+          label: 'Shopping',
+          onTap: () => Navigator.pushNamed(context, '/shopping-list'),
+        ),
+        _buildQuickAccessButton(
+          icon: Icons.category,
+          label: 'Browse',
+          onTap: () => Navigator.pushNamed(context, '/categories-browse'),
+        ),
+        _buildQuickAccessButton(
+          icon: Icons.settings,
+          label: 'Settings',
+          onTap: () => Navigator.pushNamed(context, '/settings'),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildQuickAccessButton({
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          color: AppColors.primary.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: AppColors.primary.withOpacity(0.3)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, color: AppColors.primary, size: 20),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: AppTextStyles.bodySecondary.copyWith(
+                fontSize: 10,
+                color: AppColors.primary,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -10,6 +10,19 @@ import 'pages/simple_language_selection_page.dart';
 import 'pages/password/password_recovery_page.dart' as pw2;
 import 'pages/Verification_Page.dart';
 import 'pages/camera_scan_page.dart';
+import 'pages/settings_page.dart';
+import 'pages/edit_profile_page.dart';
+import 'pages/privacy_settings_page.dart';
+import 'pages/account_settings_page.dart';
+import 'pages/notifications_settings_page.dart';
+import 'pages/favorites_page.dart';
+import 'pages/recipe_edit_page.dart';
+import 'pages/following_followers_page.dart';
+import 'pages/comments_reviews_page.dart';
+import 'pages/cooking_mode_page.dart';
+import 'pages/shopping_list_page.dart';
+import 'pages/categories_browse_page.dart';
+import 'models/recipe.dart';
 import 'l10n/app_localizations.dart';
 import 'services/language_service.dart';
 
@@ -98,6 +111,47 @@ class _RecipeAppState extends State<RecipeApp> {
                   const pw2.PasswordRecoveryPage(),
               '/verification': (context) => const OTPVerificationPage(),
               '/scan': (context) => const CameraScanPage(),
+              // Settings Pages
+              '/settings': (context) => const SettingsPage(),
+              '/edit-profile': (context) => const EditProfilePage(),
+              '/privacy-settings': (context) => const PrivacySettingsPage(),
+              '/account-settings': (context) => const AccountSettingsPage(),
+              '/notifications-settings': (context) =>
+                  const NotificationsSettingsPage(),
+              // Recipe Pages
+              '/favorites': (context) => const FavoritesPage(),
+              '/recipe-edit': (context) => RecipeEditPage(
+                recipe: Recipe(
+                  title: 'Sample Recipe',
+                  description: 'Sample description',
+                  imageUrl: 'assets/pancake.png',
+                  duration: '30 mins',
+                  category: 'Food',
+                  ingredients: ['Ingredient 1', 'Ingredient 2'],
+                  steps: ['Step 1', 'Step 2'],
+                  author: 'Sample Author',
+                  likes: 0,
+                ),
+              ),
+              '/following-followers': (context) =>
+                  const FollowingFollowersPage(isFollowingTab: true),
+              '/comments-reviews': (context) =>
+                  const CommentsReviewsPage(recipeTitle: 'Sample Recipe'),
+              '/cooking-mode': (context) => CookingModePage(
+                recipe: Recipe(
+                  title: 'Sample Recipe',
+                  description: 'Sample description',
+                  imageUrl: 'assets/pancake.png',
+                  duration: '30 mins',
+                  category: 'Food',
+                  ingredients: ['Ingredient 1', 'Ingredient 2'],
+                  steps: ['Step 1', 'Step 2'],
+                  author: 'Sample Author',
+                  likes: 0,
+                ),
+              ),
+              '/shopping-list': (context) => const ShoppingListPage(),
+              '/categories-browse': (context) => const CategoriesBrowsePage(),
             },
             localizationsDelegates: const [
               AppLocalizations.delegate,
